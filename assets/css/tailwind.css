@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply bg-dracula-bg text-dracula-text font-mono; /* Apply theme colors */
+	font-family: 'Fira Code', monospace; /* Set the font family */
+}
+
+/* Style the scrollbar container */
+::-webkit-scrollbar {
+	/* @apply bg-other-BGDark; */
+	background: transparent;
+	width: 14px;
+}
+
+/* Style the scrollbar track (the background of the scrollbar) */
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+	background: rgba(66, 68, 80, 0.5);
+}
+
+/* Hover effects for the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(66, 68, 80, 0.9);
+}
