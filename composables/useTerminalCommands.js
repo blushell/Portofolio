@@ -102,11 +102,11 @@ export const useTerminalCommands = () => {
 						props: { packageName: args[1] },
 					};
 				}
-				return 'Usage: npm i <package-name>[@version] or npm install <package-name>[@version]';
+				return 'Usage: npm i [package-name] or npm install [package-name]';
 			},
 			aliases: [],
 			hidden: true,
-			description: 'Simulate npm package installation',
+			description: 'npm package installation',
 		},
 		pnpm: {
 			action: (args) => {
@@ -116,11 +116,11 @@ export const useTerminalCommands = () => {
 						props: { packageName: args[1] },
 					};
 				}
-				return 'Usage: pnpm i <package-name>[@version] or pnpm install <package-name>[@version]';
+				return 'Usage: pnpm i [package-name] or pnpm install [package-name]';
 			},
-			aliases: [],
+			aliases: ['pn'],
 			hidden: true,
-			description: 'Simulate pnpm package installation',
+			description: 'pnpm package installation',
 		},
 	};
 
@@ -180,7 +180,7 @@ export const useTerminalCommands = () => {
 			return commandMap[command](args);
 		}
 
-		return `Command not found: ${command}. Type 'help' for available commands.`;
+		return `<span class="text-dracula-red">Command not found. Type '<span class="font-bold">help</span>' for available commands.</span>`;
 	};
 
 	return {

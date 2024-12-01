@@ -1,5 +1,5 @@
 <template>
-	<div class="font-mono space-y-2 min-h-[240px]">
+	<div class="space-y-2 min-h-[240px]">
 		<!-- Decrypt Mode: Password Cracking -->
 		<template v-if="mode === 'decrypt' && !showPassword">
 			<div class="text-dracula-red animate-pulse">
