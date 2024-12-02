@@ -11,7 +11,6 @@ import MusicCommand from '~/components/commands/MusicCommand.vue';
 // FUN COMMANDS
 import BenchmarkCommand from '~/components/commands/fun/BenchmarkCommand.vue';
 import CryptoCommand from '~/components/commands/fun/CryptoCommand.vue';
-import DiscordCommand from '~/components/commands/fun/DiscordCommand.vue';
 import HackCommand from '~/components/commands/fun/HackCommand.vue';
 import PackageInstallCommand from '~/components/commands/fun/PackageInstallCommand.vue';
 import CheatsheetCommand from '~/components/commands/CheatsheetCommand.vue';
@@ -94,12 +93,6 @@ export const useTerminalCommands = () => {
 			hidden: true,
 			description: 'Show current date and time',
 		}, */
-		discord: {
-			component: markRaw(DiscordCommand),
-			aliases: ['dm'],
-			hidden: true,
-			description: 'Send a message to my Discord server',
-		},
 		benchmark: {
 			component: markRaw(BenchmarkCommand),
 			aliases: ['bench', 'test'],

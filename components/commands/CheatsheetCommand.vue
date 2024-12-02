@@ -15,7 +15,7 @@
 				class="group h-[32px] flex items-start"
 			>
 				<template v-if="cmd.name">
-					<div class="flex items-start space-x-2">
+					<div class="flex items-center space-x-2">
 						<div class="text-dracula-pink">$</div>
 						<div
 							class="text-dracula-green group-hover:text-dracula-purple transition-colors"
@@ -93,6 +93,7 @@ const { commandConfig } = useTerminalCommands();
 // Get all commands including hidden ones
 const allCommands = computed(() => {
 	return Object.entries(commandConfig)
+		.filter(([name]) => name !== 'cheatsheet')
 		.map(([name, config]) => ({
 			name,
 			aliases: config.aliases || [],
