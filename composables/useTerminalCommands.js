@@ -2,21 +2,29 @@ import { markRaw } from 'vue';
 // BASE COMMANDS
 import HelpCommand from '~/components/commands/HelpCommand.vue';
 import AboutCommand from '~/components/commands/AboutCommand.vue';
-/* import SkillsCommand from '~/components/commands/SkillsCommand.vue'; */
-import ProjectsCommand from '~/components/commands/ProjectsCommand.vue';
+import CheatsheetCommand from '~/components/commands/CheatsheetCommand.vue';
 import ContactCommand from '~/components/commands/ContactCommand.vue';
 import DonateCommand from '~/components/commands/DonateCommand.vue';
 import FaqCommand from '~/components/commands/FaqCommand.vue';
 import MusicCommand from '~/components/commands/MusicCommand.vue';
+import ProjectsCommand from '~/components/commands/ProjectsCommand.vue';
 import ReposCommand from '~/components/commands/ReposCommand.vue';
+import SettingsCommand from '~/components/commands/SettingsCommand.vue';
+import SkillsCommand from '~/components/commands/SkillsCommand.vue';
+import StartupsCommand from '~/components/commands/StartupsCommand.vue';
+import StoreCommand from '~/components/commands/StoreCommand.vue';
+import ToolsCommand from '~/components/commands/ToolsCommand.vue';
+import WinSetupCommand from '~/components/commands/WinSetupCommand.vue';
+
 // FUN COMMANDS
 import BenchmarkCommand from '~/components/commands/fun/BenchmarkCommand.vue';
 import CryptoCommand from '~/components/commands/fun/CryptoCommand.vue';
-import HackCommand from '~/components/commands/fun/HackCommand.vue';
-import PackageInstallCommand from '~/components/commands/fun/PackageInstallCommand.vue';
-import CheatsheetCommand from '~/components/commands/CheatsheetCommand.vue';
 import EchoCommand from '~/components/commands/fun/EchoCommand.vue';
+import HackCommand from '~/components/commands/fun/HackCommand.vue';
 import MatrixCommand from '~/components/commands/fun/MatrixCommand.vue';
+import PackageInstallCommand from '~/components/commands/fun/PackageInstallCommand.vue';
+import SelfDestructCommand from '~/components/commands/fun/SelfDestructCommand.vue';
+import SshCommand from '~/components/commands/fun/SshCommand.vue';
 
 export const useTerminalCommands = () => {
 	const commandConfig = {
@@ -32,7 +40,12 @@ export const useTerminalCommands = () => {
 			hidden: false,
 			description: 'Learn more about me and my background',
 		},
-
+		cheatsheet: {
+			component: markRaw(CheatsheetCommand),
+			aliases: ['all', 'commands'],
+			hidden: true,
+			description: 'Display all available commands, including hidden ones',
+		},
 		contact: {
 			component: markRaw(ContactCommand),
 			aliases: ['email', 'social'],
@@ -55,15 +68,9 @@ export const useTerminalCommands = () => {
 		music: {
 			component: markRaw(MusicCommand),
 			aliases: ['playlist', 'spotify'],
-			hidden: false,
+			hidden: true,
 			description: 'View my curated Spotify playlists',
 		},
-		/* skills: {
-			component: markRaw(SkillsCommand),
-			aliases: ['stack', 'tech'],
-			hidden: false,
-			description: 'View my technical skills and expertise',
-		},*/
 		projects: {
 			component: markRaw(ProjectsCommand),
 			aliases: ['work', 'portfolio'],
@@ -73,8 +80,44 @@ export const useTerminalCommands = () => {
 		repos: {
 			component: markRaw(ReposCommand),
 			aliases: ['github'],
-			hidden: false,
+			hidden: true,
 			description: 'Browse my GitHub repositories',
+		},
+		settings: {
+			component: markRaw(SettingsCommand),
+			aliases: ['config'],
+			hidden: true,
+			description: 'Manage terminal settings',
+		},
+		skills: {
+			component: markRaw(SkillsCommand),
+			aliases: ['stack', 'tech'],
+			hidden: false,
+			description: 'View my technical skills and expertise',
+		},
+		startups: {
+			component: markRaw(StartupsCommand),
+			aliases: ['startups', 'business'],
+			hidden: false,
+			description: 'Learn about my startup journey and projects',
+		},
+		store: {
+			component: markRaw(StoreCommand),
+			aliases: ['shop'],
+			hidden: false,
+			description: 'Visit my store and purchase products',
+		},
+		tools: {
+			component: markRaw(ToolsCommand),
+			aliases: ['tools', 'apps'],
+			hidden: false,
+			description: 'Browse my tools and applications',
+		},
+		winsetup: {
+			component: markRaw(WinSetupCommand),
+			aliases: ['win', 'windows'],
+			hidden: false,
+			description: 'Install Windows tools and applications',
 		},
 		clear: {
 			action: () => 'CLEAR',
@@ -82,12 +125,7 @@ export const useTerminalCommands = () => {
 			hidden: false,
 			description: 'Clear the terminal screen',
 		},
-		cheatsheet: {
-			component: markRaw(CheatsheetCommand),
-			aliases: ['all', 'commands'],
-			hidden: true,
-			description: 'Display all available commands, including hidden ones',
-		},
+
 		/* FUN COMMANDS START HERE */
 		/* whoami: {
 			action: () => `<p class="text-dracula-green">guest</p>`,
@@ -106,6 +144,21 @@ export const useTerminalCommands = () => {
 			aliases: ['bench', 'test'],
 			hidden: true,
 			description: 'Run a performance benchmark',
+		},
+
+		encrypt: {
+			component: markRaw(CryptoCommand),
+			props: { mode: 'encrypt' }, // Pass the mode prop
+			aliases: ['enc'],
+			hidden: true,
+			description: 'Encrypt your portfolio data',
+		},
+		decrypt: {
+			component: markRaw(CryptoCommand),
+			props: { mode: 'decrypt' }, // Pass the mode prop
+			aliases: ['dec'],
+			hidden: true,
+			description: 'Decrypt your portfolio data',
 		},
 		echo: {
 			action: (args) => {
@@ -127,20 +180,6 @@ export const useTerminalCommands = () => {
 			aliases: [],
 			hidden: true,
 			description: 'Echo a message back to the terminal',
-		},
-		encrypt: {
-			component: markRaw(CryptoCommand),
-			props: { mode: 'encrypt' }, // Pass the mode prop
-			aliases: ['enc'],
-			hidden: true,
-			description: 'Encrypt your portfolio data',
-		},
-		decrypt: {
-			component: markRaw(CryptoCommand),
-			props: { mode: 'decrypt' }, // Pass the mode prop
-			aliases: ['dec'],
-			hidden: true,
-			description: 'Decrypt your portfolio data',
 		},
 		hack: {
 			component: markRaw(HackCommand),
@@ -182,29 +221,28 @@ export const useTerminalCommands = () => {
 			hidden: true,
 			description: 'pnpm package installation',
 		},
+		selfdestruct: {
+			component: markRaw(SelfDestructCommand),
+			aliases: ['sd', 'boom'],
+			hidden: true,
+			description: 'Self destruct the terminal',
+		},
+		ssh: {
+			action: (args) => {
+				const command = `ssh ${args.join(' ')}`;
+				console.log('Executing SSH command:', command); // Debug log
+				return {
+					component: markRaw(SshCommand),
+					props: { command },
+				};
+			},
+			aliases: [],
+			hidden: false,
+			description: 'Connect to a remote server via SSH',
+		},
 	};
 
 	// Create a map of all commands including aliases
-	/* 	const commandMap = Object.entries(commandConfig).reduce(
-		(acc, [cmd, config]) => {
-			// Add main command
-			acc[cmd] = config.component
-				? () => ({
-						component: config.component,
-						props: config.props,
-				  })
-				: config.action;
-
-			// Add aliases
-			config.aliases?.forEach((alias) => {
-				acc[alias] = acc[cmd];
-			});
-
-			return acc;
-		},
-		{}
-	); */
-
 	const commandMap = {};
 
 	for (const [cmd, config] of Object.entries(commandConfig)) {

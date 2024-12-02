@@ -12,6 +12,7 @@
 	"dependencies": {
 		"@mdi/font": "^7.4.47",
 		"@nuxtjs/tailwindcss": "6.12.2",
+		"file-saver": "^2.0.5",
 		"nuxt": "^3.14.1592",
 		"octokit": "^4.0.2",
 		"vue": "latest",
