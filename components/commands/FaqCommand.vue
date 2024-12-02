@@ -12,7 +12,13 @@
 
 		<!-- FAQ List -->
 		<div class="space-y-4 w-max">
-			<details v-for="(faq, index) in faqs" :key="index" class="group">
+			<details
+				v-for="(faq, index) in faqs"
+				:key="index"
+				class="group"
+				:open="openIndex === index"
+				@click.prevent="handleToggle(index)"
+			>
 				<summary class="cursor-pointer list-none">
 					<div
 						class="flex gap-2 items-start group-hover:bg-dracula-current p-2 rounded transition-colors"
@@ -171,6 +177,12 @@ const faqs = [
 		],
 	},
 ];
+
+const openIndex = ref(null);
+
+const handleToggle = (index) => {
+	openIndex.value = openIndex.value === index ? null : index;
+};
 </script>
 
 <style scoped>

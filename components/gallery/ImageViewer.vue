@@ -15,7 +15,7 @@
 			<div class="text-dracula-text font-medium truncate">
 				{{ alt || props.src.split('/').pop() }}
 			</div>
-			<div class="flex items-center space-x-2 window-controls">
+			<div class="flex items-center space-x-2 pointer-events-auto">
 				<button
 					type="button"
 					@click.stop="toggleMaximize"
@@ -56,8 +56,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
-
 const props = defineProps({
 	src: {
 		type: String,

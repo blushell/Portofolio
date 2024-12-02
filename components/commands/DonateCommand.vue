@@ -55,8 +55,6 @@
 	</div>
 </template>
 <script setup>
-import { ref, onMounted } from 'vue';
-
 const donationOptions = [
 	{
 		name: 'Buy me a coffee',
