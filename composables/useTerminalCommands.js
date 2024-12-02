@@ -40,36 +40,17 @@ export const useTerminalCommands = () => {
 			hidden: false,
 			description: 'Learn more about me and my background',
 		},
-		cheatsheet: {
-			component: markRaw(CheatsheetCommand),
-			aliases: ['all', 'commands'],
-			hidden: false,
-			description: 'Display all available commands, including hidden ones',
-		},
-		contact: {
-			component: markRaw(ContactCommand),
-			aliases: ['email', 'social'],
-			hidden: false,
-			description: 'Get my contact information and social links',
-		},
-
-		donate: {
-			component: markRaw(DonateCommand),
-			aliases: ['support'],
-			hidden: false,
-			description: 'Support my work and projects',
-		},
 		faq: {
 			component: markRaw(FaqCommand),
 			aliases: [],
 			hidden: false,
 			description: 'View frequently asked questions and answers',
 		},
-		music: {
-			component: markRaw(MusicCommand),
-			aliases: ['playlist', 'spotify'],
-			hidden: true,
-			description: 'View my curated Spotify playlists',
+		skills: {
+			component: markRaw(SkillsCommand),
+			aliases: ['stack', 'tech'],
+			hidden: false,
+			description: 'View my technical skills and expertise',
 		},
 		projects: {
 			component: markRaw(ProjectsCommand),
@@ -83,23 +64,23 @@ export const useTerminalCommands = () => {
 			hidden: true,
 			description: 'Browse my GitHub repositories',
 		},
-		settings: {
-			component: markRaw(SettingsCommand),
-			aliases: ['config'],
-			hidden: true,
-			description: 'Manage terminal settings',
-		},
-		skills: {
-			component: markRaw(SkillsCommand),
-			aliases: ['stack', 'tech'],
-			hidden: false,
-			description: 'View my technical skills and expertise',
-		},
 		startups: {
 			component: markRaw(StartupsCommand),
-			aliases: ['startups', 'business'],
+			aliases: ['business'],
 			hidden: false,
 			description: 'Learn about my startup journey and projects',
+		},
+		contact: {
+			component: markRaw(ContactCommand),
+			aliases: ['email', 'social'],
+			hidden: false,
+			description: 'Get my contact information and social links',
+		},
+		donate: {
+			component: markRaw(DonateCommand),
+			aliases: ['support'],
+			hidden: false,
+			description: 'Support my work and projects',
 		},
 		store: {
 			component: markRaw(StoreCommand),
@@ -107,10 +88,34 @@ export const useTerminalCommands = () => {
 			hidden: false,
 			description: 'Visit my store and purchase products',
 		},
+		cheatsheet: {
+			component: markRaw(CheatsheetCommand),
+			aliases: ['all', 'commands'],
+			hidden: false,
+			description: 'Display all available commands, including hidden ones',
+		},
+		clear: {
+			action: () => 'CLEAR',
+			aliases: ['cls', 'c'],
+			hidden: false,
+			description: 'Clear the terminal screen',
+		},
+		music: {
+			component: markRaw(MusicCommand),
+			aliases: ['playlist', 'spotify'],
+			hidden: true,
+			description: 'View my curated Spotify playlists',
+		},
+		settings: {
+			component: markRaw(SettingsCommand),
+			aliases: ['config'],
+			hidden: true,
+			description: 'Manage terminal settings',
+		},
 		tools: {
 			component: markRaw(ToolsCommand),
-			aliases: ['tools', 'apps'],
-			hidden: false,
+			aliases: ['apps'],
+			hidden: true,
 			description: 'Browse my tools and applications',
 		},
 		winsetup: {
@@ -118,12 +123,6 @@ export const useTerminalCommands = () => {
 			aliases: ['win', 'windows'],
 			hidden: true,
 			description: 'Install Windows tools and applications',
-		},
-		clear: {
-			action: () => 'CLEAR',
-			aliases: ['cls', 'c'],
-			hidden: false,
-			description: 'Clear the terminal screen',
 		},
 
 		/* FUN COMMANDS START HERE */
@@ -133,7 +132,6 @@ export const useTerminalCommands = () => {
 			hidden: true,
 			description: 'Run a performance benchmark',
 		},
-
 		encrypt: {
 			component: markRaw(CryptoCommand),
 			props: { mode: 'encrypt' }, // Pass the mode prop
