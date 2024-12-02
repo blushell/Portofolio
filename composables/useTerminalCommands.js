@@ -2,12 +2,13 @@ import { markRaw } from 'vue';
 // BASE COMMANDS
 import HelpCommand from '~/components/commands/HelpCommand.vue';
 import AboutCommand from '~/components/commands/AboutCommand.vue';
-/* import SkillsCommand from '~/components/commands/SkillsCommand.vue';
-import ProjectsCommand from '~/components/commands/ProjectsCommand.vue'; */
+/* import SkillsCommand from '~/components/commands/SkillsCommand.vue'; */
+import ProjectsCommand from '~/components/commands/ProjectsCommand.vue';
 import ContactCommand from '~/components/commands/ContactCommand.vue';
 import DonateCommand from '~/components/commands/DonateCommand.vue';
 import FaqCommand from '~/components/commands/FaqCommand.vue';
 import MusicCommand from '~/components/commands/MusicCommand.vue';
+import ReposCommand from '~/components/commands/ReposCommand.vue';
 // FUN COMMANDS
 import BenchmarkCommand from '~/components/commands/fun/BenchmarkCommand.vue';
 import CryptoCommand from '~/components/commands/fun/CryptoCommand.vue';
@@ -16,6 +17,7 @@ import PackageInstallCommand from '~/components/commands/fun/PackageInstallComma
 import CheatsheetCommand from '~/components/commands/CheatsheetCommand.vue';
 import EchoCommand from '~/components/commands/fun/EchoCommand.vue';
 import MatrixCommand from '~/components/commands/fun/MatrixCommand.vue';
+
 export const useTerminalCommands = () => {
 	const commandConfig = {
 		help: {
@@ -61,13 +63,19 @@ export const useTerminalCommands = () => {
 			aliases: ['stack', 'tech'],
 			hidden: false,
 			description: 'View my technical skills and expertise',
-		},
+		},*/
 		projects: {
 			component: markRaw(ProjectsCommand),
 			aliases: ['work', 'portfolio'],
 			hidden: false,
 			description: 'Browse my featured projects and work',
-		}, */
+		},
+		repos: {
+			component: markRaw(ReposCommand),
+			aliases: ['github'],
+			hidden: false,
+			description: 'Browse my GitHub repositories',
+		},
 		clear: {
 			action: () => 'CLEAR',
 			aliases: ['cls', 'c'],

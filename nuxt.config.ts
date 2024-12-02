@@ -13,7 +13,7 @@ export default defineNuxtConfig({
 		static: true,
 	}, */
 	app: {
-		baseURL: '/portfolio/',
+		baseURL: '/Portofolio/',
 		head: {
 			title: 'Terminal Portfolio',
 			meta: [
