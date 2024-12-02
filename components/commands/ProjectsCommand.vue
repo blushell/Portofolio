@@ -35,9 +35,7 @@
 				</div>
 
 				<!-- Project Description -->
-				<div class="text-dracula-foreground mb-3">
-					> {{ project.description }}
-				</div>
+				<div class="text-dracula-text mb-3">> {{ project.description }}</div>
 
 				<!-- Features -->
 				<div class="space-y-1 mb-3">
@@ -55,7 +53,7 @@
 					<span
 						v-for="tag in project.tags"
 						:key="tag"
-						class="px-2 py-1 bg-dracula-background rounded text-xs"
+						class="px-2 py-1 bg-dracula-bg rounded text-xs"
 						:class="`text-dracula-${
 							['cyan', 'green', 'pink', 'yellow'][project.tags.indexOf(tag) % 4]
 						}`"
@@ -114,33 +112,34 @@ const projects = [
 	{
 		name: 'Terminal Portfolio',
 		description:
-			'Interactive terminal-themed developer portfolio with real command processing and dynamic UI components.',
-		tags: ['Vue.js', 'Nuxt', 'TailwindCSS', 'TypeScript'],
+			'Interactive terminal developer portfolio with real command processing and dynamic UI components.',
+		tags: ['Vue.js', 'Nuxt', 'TailwindCSS', 'JavaScript'],
 		features: [
 			'Real command processing',
 			'Custom terminal emulation',
 			'Interactive UI components',
 			'Dracula theme integration',
 		],
-		github: 'https://github.com/jonesydev/terminal-portfolio',
-		demo: 'https://jonesy.dev',
+		github: 'https://github.com/blushell/Portofolio',
+		demo: '#',
 		status: 'active',
 	},
 	{
-		name: 'Task Manager API',
+		name: 'TP Toolkit',
 		description:
-			'Full-featured RESTful API for task and project management with real-time updates.',
-		tags: ['Node.js', 'Express', 'MongoDB', 'WebSocket'],
+			'Essential tools made for Touch Portal plugin development and content creation',
+		tags: ['Vue.js', 'Nuxt', 'Vuetify', 'JavaScript'],
 		features: [
-			'Real-time updates',
-			'JWT authentication',
-			'File uploads',
-			'Rate limiting',
+			'Icon Pack Generator',
+			'Entry Builder',
+			'PLugin Bundler',
+			'and more...',
 		],
-		github: 'https://github.com/jonesydev/task-manager',
+		github: 'https://github.com/blushell/TP-Toolkit',
+		demo: '#',
 		status: 'stable',
 	},
-	{
+	/* {
 		name: 'DevFlow',
 		description:
 			'Developer productivity suite with AI-powered insights and workflow automation.',
@@ -153,7 +152,7 @@ const projects = [
 		],
 		github: 'https://github.com/jonesydev/devflow',
 		status: 'development',
-	},
+	}, */
 ];
 
 const getStatusColor = (status) => {

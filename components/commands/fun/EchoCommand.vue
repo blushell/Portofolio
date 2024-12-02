@@ -16,7 +16,7 @@ const props = defineProps({
 		<div v-if="error" class="text-dracula-red">
 			Error: Message must be wrapped in quotes. Example: echo "Hello World"
 		</div>
-		<div v-else class="text-dracula-foreground">
+		<div v-else class="text-dracula-text">
 			{{ message }}
 		</div>
 	</div>

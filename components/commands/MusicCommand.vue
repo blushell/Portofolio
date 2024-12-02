@@ -1,5 +1,5 @@
 <template>
-	<div class="space-y-6 font-mono">
+	<div class="space-y-6">
 		<!-- Now Playing Section -->
 		<div class="space-y-4">
 			<div v-if="loading" class="text-dracula-purple animate-pulse">
@@ -82,7 +82,7 @@
 			</div>
 
 			<!-- Terminal-style Pagination -->
-			<div class="font-mono space-y-2 border-t border-dracula-current pt-2">
+			<div class="space-y-2 border-t border-dracula-current pt-2">
 				<div class="text-dracula-comment">Navigation commands:</div>
 				<div class="space-x-4">
 					<button

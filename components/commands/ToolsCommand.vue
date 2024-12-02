@@ -125,15 +125,13 @@ const toolCategories = [
 </script>
 
 <template>
-	<div class="space-y-6 font-mono">
+	<div class="space-y-6">
 		<!-- Header -->
 		<div class="border-b border-dracula-current pb-2">
 			<div class="text-dracula-purple font-bold">~/tools $ ls --tree</div>
 			<div class="text-dracula-comment text-sm mt-1">
 				Displaying
-				{{
-					toolCategories.reduce((acc, cat) => acc + cat.tools.length, 0)
-				}}
+				{{ toolCategories.reduce((acc, cat) => acc + cat.tools.length, 0) }}
 				tools in {{ toolCategories.length }} categories
 			</div>
 		</div>

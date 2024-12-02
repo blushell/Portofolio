@@ -8,7 +8,7 @@
 					(aliases: {{ cmd.aliases.join(', ') }})
 				</span>
 			</div>
-			<div class="text-dracula-foreground pl-4 text-sm">
+			<div class="text-dracula-text pl-4 text-sm">
 				{{ cmd.description }}
 			</div>
 		</div>

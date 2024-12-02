@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-	@apply bg-dracula-bg text-dracula-text font-mono; /* Apply theme colors */
+	@apply bg-dracula-bg text-dracula-text; /* Apply theme colors */
 	font-family: 'Fira Code', monospace; /* Set the font family */
 }
 

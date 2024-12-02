@@ -9,9 +9,7 @@
 			v-if="showWakeUp"
 			class="absolute inset-0 flex items-center justify-center"
 		>
-			<div class="text-green-500 text-2xl font-mono animate-pulse">
-				Wake up, Neo...
-			</div>
+			<div class="text-green-500 text-2xl animate-pulse">Wake up, Neo...</div>
 		</div>
 		<div class="absolute bottom-4 right-4 text-green-500 text-sm opacity-50">
 			Press ESC or click anywhere to exit

@@ -12,7 +12,7 @@
 			@mousedown="startDrag"
 			@dblclick="toggleMaximize"
 		>
-			<div class="text-dracula-foreground font-medium truncate">
+			<div class="text-dracula-text font-medium truncate">
 				{{ alt || props.src.split('/').pop() }}
 			</div>
 			<div class="flex items-center space-x-2 window-controls">
@@ -32,9 +32,7 @@
 		</div>
 
 		<!-- Image Container -->
-		<div
-			class="relative overflow-auto p-4 bg-dracula-background h-[calc(100%-2.5rem)]"
-		>
+		<div class="relative overflow-auto p-4 bg-dracula-bg h-[calc(100%-2.5rem)]">
 			<template v-if="!imageError">
 				<img
 					:src="imagePath"

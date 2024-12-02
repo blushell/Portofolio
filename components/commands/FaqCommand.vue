@@ -27,15 +27,12 @@
 				</summary>
 				<div class="mt-2 ml-8 space-y-2">
 					<template v-for="(part, pIndex) in faq.answer" :key="pIndex">
-						<div
-							v-if="typeof part === 'string'"
-							class="text-dracula-foreground"
-						>
+						<div v-if="typeof part === 'string'" class="text-dracula-text">
 							{{ part }}
 						</div>
 						<div
 							v-else-if="part.type === 'code'"
-							class="bg-dracula-current p-2 rounded font-mono text-sm text-dracula-green"
+							class="bg-dracula-current p-2 rounded text-sm text-dracula-green"
 						>
 							{{ part.content }}
 						</div>
@@ -46,7 +43,7 @@
 								class="flex gap-2"
 							>
 								<span class="text-dracula-comment">•</span>
-								<span class="text-dracula-foreground">{{ item }}</span>
+								<span class="text-dracula-text">{{ item }}</span>
 							</div>
 						</div>
 					</template>

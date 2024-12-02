@@ -7,7 +7,7 @@
 			</div>
 			<TerminalCommandOutput :output="entry.output" />
 		</div>
-		<div v-if="isVisible" class="flex items-center">
+		<div v-if="isVisible" class="flex items-center pb-6">
 			<TerminalCommandPrompt />
 			<input
 				ref="commandInput"
@@ -26,7 +26,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
 import { useTerminalCommands } from '~/composables/useTerminalCommands';
 import { useCommandHistory } from '~/composables/useCommandHistory';
 import { useAutoComplete } from '~/composables/useAutoComplete';

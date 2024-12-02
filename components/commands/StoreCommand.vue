@@ -1,5 +1,5 @@
 <template>
-	<div class="space-y-2 font-mono">
+	<div class="space-y-2">
 		<div class="flex items-center gap-2">
 			<span class="text-dracula-purple">🛍️</span>
 			<span class="text-dracula-green animate-pulse"

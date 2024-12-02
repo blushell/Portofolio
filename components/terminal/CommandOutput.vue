@@ -1,5 +1,5 @@
 <template>
-	<div v-if="output" class="mt-1">
+	<div v-if="output" class="mb-6">
 		<component
 			v-if="typeof output === 'object' && output.component"
 			:is="output.component"

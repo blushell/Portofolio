@@ -1,12 +1,13 @@
 <template>
-	<div class="space-y-4 max-w-prose break-words">
+	<div class="space-y-2 max-w-prose">
 		<p>
 			Hi there! I'm a full-stack developer and self-proclaimed bug whisperer
 			who's been wrangling code since the tender age of 16. My coding journey
 			began thanks to my amazing nana, who kickstarted my tech obsession by
 			giving me my first computer—a Commodore 64—and later buying me my first
 			laptop. She even roped me into creating a website for her grandparent-run
-			RuneScape clan. (Yes, my nana played RuneScape. And yes, she was awesome.)
+			RuneScape clan.<br />(Yes, my nana played RuneScape. And yes, she was
+			awesome.)
 		</p>
 		<p>
 			Now, at a seasoned 36, I've traded sleepless nights debugging for... well,

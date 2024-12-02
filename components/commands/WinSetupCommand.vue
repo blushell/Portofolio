@@ -27,7 +27,7 @@ const copyCommand = async () => {
 
 		<!-- Description -->
 		<div class="space-y-2">
-			<p class="text-dracula-foreground">
+			<p class="text-dracula-text">
 				A powerful utility to automate Windows development environment setup:
 			</p>
 			<ul class="list-disc list-inside text-dracula-comment space-y-1 ml-4">
@@ -45,7 +45,7 @@ const copyCommand = async () => {
 			<div
 				class="bg-dracula-current p-4 rounded-lg flex items-center justify-between"
 			>
-				<code class="text-dracula-green font-mono">{{ installCommand }}</code>
+				<code class="text-dracula-green">{{ installCommand }}</code>
 				<button
 					@click="copyCommand"
 					class="px-3 py-1 bg-dracula-purple text-dracula-background rounded hover:bg-dracula-pink transition-colors text-sm"

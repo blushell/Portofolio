@@ -25,9 +25,7 @@
 						<div v-if="cmd.aliases.length" class="text-dracula-comment text-sm">
 							({{ cmd.aliases.join(', ') }})
 						</div>
-						<div class="text-dracula-foreground text-sm">
-							- {{ cmd.description }}
-						</div>
+						<div class="text-dracula-text text-sm">- {{ cmd.description }}</div>
 					</div>
 				</template>
 				<template v-else>

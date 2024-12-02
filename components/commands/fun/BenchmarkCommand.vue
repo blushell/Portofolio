@@ -10,10 +10,7 @@
 			</div>
 
 			<!-- Progress -->
-			<div
-				v-else-if="result.type === 'progress'"
-				class="text-dracula-foreground"
-			>
+			<div v-else-if="result.type === 'progress'" class="text-dracula-text">
 				{{ result.text }}
 				<span class="animate-pulse">⚡</span>
 			</div>

@@ -32,7 +32,7 @@
 								<a
 									:href="repo.url"
 									target="_blank"
-									class="text-dracula-green hover:text-dracula-cyan transition-colors font-mono"
+									class="text-dracula-green hover:text-dracula-cyan transition-colors"
 								>
 									$ {{ repo.name }}
 								</a>
@@ -56,7 +56,7 @@
 			</div>
 
 			<!-- Terminal-style Pagination -->
-			<div class="font-mono space-y-2 border-t border-dracula-current pt-2">
+			<div class="space-y-2 border-t border-dracula-current pt-2">
 				<div class="text-dracula-comment">Navigation commands:</div>
 				<div class="space-x-4">
 					<button

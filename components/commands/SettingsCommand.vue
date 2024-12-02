@@ -26,7 +26,7 @@
 
 		<!-- Nano-like Editor -->
 		<div v-else class="space-y-2">
-			<div class="bg-dracula-current p-4 rounded font-mono text-sm">
+			<div class="bg-dracula-current p-4 rounded text-sm">
 				<!-- Editor Header -->
 				<div class="flex justify-between text-dracula-comment mb-2">
 					<div>GNU nano {{ selectedSetting.filename }}</div>
@@ -48,7 +48,7 @@
 
 				<!-- File Content -->
 				<div
-					class="text-dracula-foreground whitespace-pre-wrap break-all bg-dracula-background p-4 rounded min-h-[300px] max-h-[500px] overflow-y-auto"
+					class="text-dracula-text whitespace-pre-wrap break-all bg-dracula-bg p-4 rounded min-h-[300px] max-h-[500px] overflow-y-auto"
 				>
 					{{ selectedSetting.content }}
 				</div>

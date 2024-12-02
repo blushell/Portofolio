@@ -34,12 +34,12 @@
 	</div>
 
 	<div v-else class="space-y-2">
-		<div class="bg-dracula-current p-4 rounded font-mono text-sm">
+		<div class="bg-dracula-current p-4 rounded text-sm">
 			<div class="flex justify-between text-dracula-comment mb-2">
 				<div>GNU nano 7.2</div>
 				<div>id_rsa.pub</div>
 			</div>
-			<div class="text-dracula-foreground whitespace-pre-wrap break-all">
+			<div class="text-dracula-text whitespace-pre-wrap break-all">
 				{{ publicKey }}
 			</div>
 			<div

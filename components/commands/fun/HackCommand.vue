@@ -1,5 +1,5 @@
 <template>
-	<div class="font-mono space-y-1 min-h-[460px]">
+	<div class="space-y-1 min-h-[460px]">
 		<template v-for="(line, index) in lines" :key="index">
 			<div
 				:class="{

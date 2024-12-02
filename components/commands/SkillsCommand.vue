@@ -1,5 +1,5 @@
 <template>
-	<div class="space-y-4 font-mono">
+	<div class="space-y-4">
 		<div
 			v-for="category in skillCategories"
 			:key="category.name"

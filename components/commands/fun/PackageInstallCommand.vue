@@ -1,8 +1,8 @@
 <template>
 	<div class="space-y-2 min-h-[270px]">
 		<template v-for="(line, index) in output" :key="index">
-			<!-- <div class="text-dracula-foreground">{{ line }}</div> -->
-			<div class="text-dracula-foreground" v-html="line"></div>
+			<!-- <div class="text-dracula-text">{{ line }}</div> -->
+			<div class="text-dracula-text" v-html="line"></div>
 		</template>
 
 		<div v-if="!isComplete" class="text-dracula-purple animate-pulse">
