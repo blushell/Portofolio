@@ -9,9 +9,9 @@ export default defineNuxtConfig({
 		'~/assets/css/tailwind.css',
 		'@mdi/font/css/materialdesignicons.min.css',
 	],
-	nitro: {
+	/* nitro: {
 		static: true,
-	},
+	}, */
 	app: {
 		head: {
 			title: 'Terminal Portfolio',

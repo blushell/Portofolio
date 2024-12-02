@@ -12,6 +12,7 @@
 	"dependencies": {
 		"@mdi/font": "^7.4.47",
 		"@nuxtjs/tailwindcss": "6.12.2",
+		"@spotify/web-api-ts-sdk": "^1.2.0",
 		"discord-webhook-node": "^1.1.8",
 		"nuxt": "^3.14.1592",
 		"vue": "latest",

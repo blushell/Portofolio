@@ -1,9 +1,11 @@
 import { Webhook } from 'discord-webhook-node';
 
+// Move messageHistory outside the handler to persist between requests
+const messageHistory = new Map();
+const COOLDOWN_MS = 60000; // 60 seconds cooldown
+
 export default defineEventHandler(async (event) => {
 	const WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
-	const COOLDOWN_MS = 30000; // 30 seconds cooldown
-	const messageHistory = new Map();
 
 	try {
 		if (!WEBHOOK_URL) {

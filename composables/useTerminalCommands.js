@@ -1,16 +1,22 @@
 import { markRaw } from 'vue';
+// BASE COMMANDS
 import HelpCommand from '~/components/commands/HelpCommand.vue';
 import AboutCommand from '~/components/commands/AboutCommand.vue';
+/* import SkillsCommand from '~/components/commands/SkillsCommand.vue';
+import ProjectsCommand from '~/components/commands/ProjectsCommand.vue'; */
 import ContactCommand from '~/components/commands/ContactCommand.vue';
+import DonateCommand from '~/components/commands/DonateCommand.vue';
+import FaqCommand from '~/components/commands/FaqCommand.vue';
+import MusicCommand from '~/components/commands/MusicCommand.vue';
+// FUN COMMANDS
 import BenchmarkCommand from '~/components/commands/fun/BenchmarkCommand.vue';
 import CryptoCommand from '~/components/commands/fun/CryptoCommand.vue';
 import DiscordCommand from '~/components/commands/fun/DiscordCommand.vue';
-/* import SkillsCommand from '~/components/commands/SkillsCommand.vue';
-import ProjectsCommand from '~/components/commands/ProjectsCommand.vue';
-import ContactCommand from '~/components/commands/ContactCommand.vue'; */
+import HackCommand from '~/components/commands/fun/HackCommand.vue';
 import PackageInstallCommand from '~/components/commands/fun/PackageInstallCommand.vue';
 import CheatsheetCommand from '~/components/commands/CheatsheetCommand.vue';
-
+import EchoCommand from '~/components/commands/fun/EchoCommand.vue';
+import MatrixCommand from '~/components/commands/fun/MatrixCommand.vue';
 export const useTerminalCommands = () => {
 	const commandConfig = {
 		help: {
@@ -25,39 +31,32 @@ export const useTerminalCommands = () => {
 			hidden: false,
 			description: 'Learn more about me and my background',
 		},
-		benchmark: {
-			component: markRaw(BenchmarkCommand),
-			aliases: ['bench', 'test'],
-			hidden: true,
-			description: 'Run a performance benchmark',
-		},
+
 		contact: {
 			component: markRaw(ContactCommand),
 			aliases: ['email', 'social'],
 			hidden: false,
 			description: 'Get my contact information and social links',
 		},
-		encrypt: {
-			component: markRaw(CryptoCommand),
-			props: { mode: 'encrypt' }, // Pass the mode prop
-			aliases: ['enc'],
-			hidden: true,
-			description: 'Encrypt your portfolio data',
-		},
-		decrypt: {
-			component: markRaw(CryptoCommand),
-			props: { mode: 'decrypt' }, // Pass the mode prop
-			aliases: ['dec'],
-			hidden: true,
-			description: 'Decrypt your portfolio data',
-		},
-		discord: {
-			component: markRaw(DiscordCommand),
-			aliases: ['dm'],
-			hidden: true,
-			description: 'Send a message to my Discord server',
-		},
 
+		donate: {
+			component: markRaw(DonateCommand),
+			aliases: ['support'],
+			hidden: false,
+			description: 'Support my work and projects',
+		},
+		faq: {
+			component: markRaw(FaqCommand),
+			aliases: [],
+			hidden: false,
+			description: 'View frequently asked questions and answers',
+		},
+		music: {
+			component: markRaw(MusicCommand),
+			aliases: ['playlist', 'spotify'],
+			hidden: false,
+			description: 'View my curated Spotify playlists',
+		},
 		/* skills: {
 			component: markRaw(SkillsCommand),
 			aliases: ['stack', 'tech'],
@@ -76,6 +75,13 @@ export const useTerminalCommands = () => {
 			hidden: false,
 			description: 'Clear the terminal screen',
 		},
+		cheatsheet: {
+			component: markRaw(CheatsheetCommand),
+			aliases: ['all', 'commands'],
+			hidden: true,
+			description: 'Display all available commands, including hidden ones',
+		},
+		/* FUN COMMANDS START HERE */
 		/* whoami: {
 			action: () => `<p class="text-dracula-green">guest</p>`,
 			aliases: ['user', 'who'],
@@ -88,11 +94,64 @@ export const useTerminalCommands = () => {
 			hidden: true,
 			description: 'Show current date and time',
 		}, */
-		cheatsheet: {
-			component: markRaw(CheatsheetCommand),
-			aliases: ['all', 'commands'],
+		discord: {
+			component: markRaw(DiscordCommand),
+			aliases: ['dm'],
 			hidden: true,
-			description: 'Display all available commands, including hidden ones',
+			description: 'Send a message to my Discord server',
+		},
+		benchmark: {
+			component: markRaw(BenchmarkCommand),
+			aliases: ['bench', 'test'],
+			hidden: true,
+			description: 'Run a performance benchmark',
+		},
+		echo: {
+			action: (args) => {
+				const fullText = args.join(' ');
+				const quoteMatch = fullText.match(/^"(.+)"$/);
+
+				if (!quoteMatch) {
+					return {
+						component: markRaw(EchoCommand),
+						props: { error: true },
+					};
+				}
+
+				return {
+					component: markRaw(EchoCommand),
+					props: { message: quoteMatch[1] },
+				};
+			},
+			aliases: [],
+			hidden: true,
+			description: 'Echo a message back to the terminal',
+		},
+		encrypt: {
+			component: markRaw(CryptoCommand),
+			props: { mode: 'encrypt' }, // Pass the mode prop
+			aliases: ['enc'],
+			hidden: true,
+			description: 'Encrypt your portfolio data',
+		},
+		decrypt: {
+			component: markRaw(CryptoCommand),
+			props: { mode: 'decrypt' }, // Pass the mode prop
+			aliases: ['dec'],
+			hidden: true,
+			description: 'Decrypt your portfolio data',
+		},
+		hack: {
+			component: markRaw(HackCommand),
+			aliases: [],
+			hidden: true,
+			description: 'Hacking the mainframe',
+		},
+		matrix: {
+			component: markRaw(MatrixCommand),
+			aliases: [],
+			hidden: true,
+			description: 'Enter into the Matrix',
 		},
 		npm: {
 			action: (args) => {

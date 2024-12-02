@@ -1,5 +1,5 @@
 <template>
-	<div class="space-y-2">
+	<div class="space-y-2 min-h-[500px]">
 		<div v-for="(entry, index) in displayHistory" :key="index">
 			<div class="flex items-center">
 				<TerminalCommandPrompt />
