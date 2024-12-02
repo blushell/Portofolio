@@ -31,7 +31,7 @@ export const useTerminalCommands = () => {
 		help: {
 			component: markRaw(HelpCommand),
 			aliases: ['h', '?'],
-			hidden: false,
+			hidden: true,
 			description: 'Display available commands and their aliases',
 		},
 		about: {
@@ -43,7 +43,7 @@ export const useTerminalCommands = () => {
 		cheatsheet: {
 			component: markRaw(CheatsheetCommand),
 			aliases: ['all', 'commands'],
-			hidden: true,
+			hidden: false,
 			description: 'Display all available commands, including hidden ones',
 		},
 		contact: {
@@ -116,7 +116,7 @@ export const useTerminalCommands = () => {
 		winsetup: {
 			component: markRaw(WinSetupCommand),
 			aliases: ['win', 'windows'],
-			hidden: false,
+			hidden: true,
 			description: 'Install Windows tools and applications',
 		},
 		clear: {
@@ -127,18 +127,6 @@ export const useTerminalCommands = () => {
 		},
 
 		/* FUN COMMANDS START HERE */
-		/* whoami: {
-			action: () => `<p class="text-dracula-green">guest</p>`,
-			aliases: ['user', 'who'],
-			hidden: true,
-			description: 'Display current user',
-		},
-		date: {
-			action: () => `<p>${new Date().toLocaleString()}</p>`,
-			aliases: ['time', 'd'],
-			hidden: true,
-			description: 'Show current date and time',
-		}, */
 		benchmark: {
 			component: markRaw(BenchmarkCommand),
 			aliases: ['bench', 'test'],
@@ -237,7 +225,7 @@ export const useTerminalCommands = () => {
 				};
 			},
 			aliases: [],
-			hidden: false,
+			hidden: true,
 			description: 'Connect to a remote server via SSH',
 		},
 	};
