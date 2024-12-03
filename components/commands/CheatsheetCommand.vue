@@ -90,7 +90,7 @@ const { commandConfig } = useTerminalCommands();
 // Get all commands including hidden ones
 const allCommands = computed(() => {
 	return Object.entries(commandConfig)
-		.filter(([name]) => name !== 'cheatsheet')
+		.filter(([name]) => !['cheatsheet', 'help'].includes(name))
 		.map(([name, config]) => ({
 			name,
 			aliases: config.aliases || [],
@@ -98,7 +98,7 @@ const allCommands = computed(() => {
 			hidden: config.hidden || false,
 		}))
 		.sort((a, b) => {
-			const priority = ['help', 'clear'];
+			const priority = ['clear'];
 			const priorityA = priority.indexOf(a.name);
 			const priorityB = priority.indexOf(b.name);
 
