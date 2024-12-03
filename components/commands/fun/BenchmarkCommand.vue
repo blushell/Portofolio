@@ -43,8 +43,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-
 const results = ref([]);
 const isComplete = ref(false);
 const totalScore = ref(0);

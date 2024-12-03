@@ -101,7 +101,6 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue';
 import { Octokit } from 'octokit';
 
 const USERNAME = 'blushell';

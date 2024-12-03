@@ -19,9 +19,8 @@
 		</div>
 	</div>
 </template>
-<script setup>
-import { ref, onMounted } from 'vue';
 
+<script setup>
 const lines = ref([]);
 const isComplete = ref(false);
 const interval = ref(null);

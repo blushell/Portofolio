@@ -13,8 +13,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-
 const props = defineProps({
 	packageName: {
 		type: String,

@@ -1,5 +1,3 @@
-import { ref, onMounted } from 'vue';
-
 const scrambleIp = (ip) => {
 	const octets = ip.split('.');
 	const scrambledOctets = octets.map((octet) => {

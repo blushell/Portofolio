@@ -19,8 +19,6 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
-
 onMounted(() => {
 	window.open('https://store.jonesy.dev', '_blank');
 });

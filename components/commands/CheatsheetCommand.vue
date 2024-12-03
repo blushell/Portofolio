@@ -79,7 +79,6 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
 import { useTerminalCommands } from '~/composables/useTerminalCommands';
 
 const ITEMS_PER_PAGE = 8;

@@ -1,3 +1,73 @@
+<template>
+	<div class="space-y-6">
+		<!-- Header -->
+		<div class="border-b border-dracula-current pb-2">
+			<div class="text-dracula-purple font-bold">~/tools $ ls --tree</div>
+			<div class="text-dracula-comment text-sm mt-1">
+				Displaying
+				{{ toolCategories.reduce((acc, cat) => acc + cat.tools.length, 0) }}
+				tools in {{ toolCategories.length }} categories
+			</div>
+		</div>
+
+		<!-- Categories -->
+		<div class="space-y-6">
+			<div
+				v-for="(category, catIndex) in toolCategories"
+				:key="category.name"
+				class="space-y-2"
+				:style="{ animationDelay: `${catIndex * 100}ms` }"
+			>
+				<!-- Category Header -->
+				<div class="flex items-center gap-2 text-dracula-purple font-bold">
+					<span>{{ category.icon }}</span>
+					<span>{{ category.name }}</span>
+				</div>
+
+				<!-- Tools List -->
+				<div class="space-y-2 ml-6">
+					<div
+						v-for="(tool, toolIndex) in category.tools"
+						:key="tool.name"
+						class="group"
+						:style="{ animationDelay: `${catIndex * 100 + toolIndex * 50}ms` }"
+					>
+						<div class="flex items-start">
+							<span class="text-dracula-comment mr-2">└─</span>
+							<div class="space-y-1">
+								<div class="flex items-center gap-2">
+									<a
+										:href="tool.link"
+										target="_blank"
+										class="text-dracula-green hover:text-dracula-purple transition-colors"
+									>
+										{{ tool.name }}
+									</a>
+									<span
+										class="text-dracula-comment text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+									>
+										↗
+									</span>
+								</div>
+								<div class="text-dracula-comment text-sm">
+									{{ tool.description }}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<div
+			class="text-dracula-comment text-sm italic border-t border-dracula-current pt-2"
+		>
+			Tip: Click on tool names to visit their websites
+		</div>
+	</div>
+</template>
+
 <script setup>
 const toolCategories = [
 	{
@@ -123,76 +193,6 @@ const toolCategories = [
 	},
 ];
 </script>
-
-<template>
-	<div class="space-y-6">
-		<!-- Header -->
-		<div class="border-b border-dracula-current pb-2">
-			<div class="text-dracula-purple font-bold">~/tools $ ls --tree</div>
-			<div class="text-dracula-comment text-sm mt-1">
-				Displaying
-				{{ toolCategories.reduce((acc, cat) => acc + cat.tools.length, 0) }}
-				tools in {{ toolCategories.length }} categories
-			</div>
-		</div>
-
-		<!-- Categories -->
-		<div class="space-y-6">
-			<div
-				v-for="(category, catIndex) in toolCategories"
-				:key="category.name"
-				class="space-y-2"
-				:style="{ animationDelay: `${catIndex * 100}ms` }"
-			>
-				<!-- Category Header -->
-				<div class="flex items-center gap-2 text-dracula-purple font-bold">
-					<span>{{ category.icon }}</span>
-					<span>{{ category.name }}</span>
-				</div>
-
-				<!-- Tools List -->
-				<div class="space-y-2 ml-6">
-					<div
-						v-for="(tool, toolIndex) in category.tools"
-						:key="tool.name"
-						class="group"
-						:style="{ animationDelay: `${catIndex * 100 + toolIndex * 50}ms` }"
-					>
-						<div class="flex items-start">
-							<span class="text-dracula-comment mr-2">└─</span>
-							<div class="space-y-1">
-								<div class="flex items-center gap-2">
-									<a
-										:href="tool.link"
-										target="_blank"
-										class="text-dracula-green hover:text-dracula-purple transition-colors"
-									>
-										{{ tool.name }}
-									</a>
-									<span
-										class="text-dracula-comment text-xs opacity-0 group-hover:opacity-100 transition-opacity"
-									>
-										↗
-									</span>
-								</div>
-								<div class="text-dracula-comment text-sm">
-									{{ tool.description }}
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Footer -->
-		<div
-			class="text-dracula-comment text-sm italic border-t border-dracula-current pt-2"
-		>
-			Tip: Click on tool names to visit their websites
-		</div>
-	</div>
-</template>
 
 <style scoped>
 @keyframes slideIn {

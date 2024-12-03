@@ -31,6 +31,7 @@
 		</p>
 	</div>
 </template>
+
 <script setup>
 import ImageLink from '../gallery/ImageLink.vue';
 const config = useRuntimeConfig();

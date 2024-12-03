@@ -1,23 +1,3 @@
-<script setup>
-import { ref } from 'vue';
-
-const installCommand = 'irm "https://jonesy.gg/win" | iex';
-const message = ref('');
-
-const copyCommand = async () => {
-	try {
-		await navigator.clipboard.writeText(installCommand);
-		message.value = 'Command copied to clipboard!';
-		setTimeout(() => {
-			message.value = '';
-		}, 2000);
-	} catch (err) {
-		console.error('Failed to copy command:', err);
-		message.value = 'Failed to copy command';
-	}
-};
-</script>
-
 <template>
 	<div class="space-y-4">
 		<!-- Header -->
@@ -68,6 +48,24 @@ const copyCommand = async () => {
 		</div>
 	</div>
 </template>
+
+<script setup>
+const installCommand = 'irm "https://jonesy.gg/win" | iex';
+const message = ref('');
+
+const copyCommand = async () => {
+	try {
+		await navigator.clipboard.writeText(installCommand);
+		message.value = 'Command copied to clipboard!';
+		setTimeout(() => {
+			message.value = '';
+		}, 2000);
+	} catch (err) {
+		console.error('Failed to copy command:', err);
+		message.value = 'Failed to copy command';
+	}
+};
+</script>
 
 <style scoped>
 @keyframes fadeOut {

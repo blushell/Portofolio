@@ -34,8 +34,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-
 const countdown = ref(5);
 const status = ref('countdown');
 

@@ -66,7 +66,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { useTerminalInput } from '~/composables/useTerminalInput';
 
 const props = defineProps({

@@ -16,9 +16,8 @@
 		</div>
 	</div>
 </template>
-<script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
 
+<script setup>
 const canvas = ref(null);
 const animationId = ref(null);
 const showWakeUp = ref(false);

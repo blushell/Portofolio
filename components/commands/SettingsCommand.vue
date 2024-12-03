@@ -85,7 +85,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { useTerminalInput } from '~/composables/useTerminalInput';
 import terminal from '~/data/settings/terminal';
 import vim from '~/data/settings/vim';

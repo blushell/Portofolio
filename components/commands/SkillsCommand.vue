@@ -37,9 +37,9 @@ const skillCategories = [
 	{
 		name: 'Frontend',
 		skills: [
-			{ name: 'Vue.js', level: 90, color: 'cyan' },
-			{ name: 'React', level: 85, color: 'green' },
-			{ name: 'TypeScript', level: 80, color: 'pink' },
+			{ name: 'Vue.js', level: 85, color: 'cyan' },
+			{ name: 'Nuxt.js', level: 75, color: 'green' },
+			{ name: 'TypeScript', level: 40, color: 'pink' },
 			{ name: 'JavaScript', level: 95, color: 'yellow' },
 			{ name: 'HTML/CSS', level: 90, color: 'orange' },
 		],
@@ -48,7 +48,7 @@ const skillCategories = [
 		name: 'Backend',
 		skills: [
 			{ name: 'Node.js', level: 85, color: 'cyan' },
-			{ name: 'Python', level: 75, color: 'green' },
+			{ name: 'Python', level: 60, color: 'green' },
 			{ name: 'PostgreSQL', level: 80, color: 'pink' },
 			{ name: 'MongoDB', level: 70, color: 'yellow' },
 		],
@@ -57,7 +57,7 @@ const skillCategories = [
 		name: 'DevOps',
 		skills: [
 			{ name: 'Docker', level: 75, color: 'cyan' },
-			{ name: 'AWS', level: 70, color: 'green' },
+			{ name: 'AWS', level: 45, color: 'green' },
 			{ name: 'CI/CD', level: 80, color: 'pink' },
 			{ name: 'Git', level: 90, color: 'yellow' },
 		],
