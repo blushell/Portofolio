@@ -2,7 +2,7 @@
 	<div class="flex flex-col sm:flex-row items-center">
 		<pre
 			style="font-family: monospace"
-			class="text-dracula-purple leading-none text-[0.5rem] sm:text-lg sm:leading-none"
+			class="text-dracula-purple leading-none text-[0.2rem] sm:text-lg sm:leading-none"
 			>{{ asciiLogo }}</pre
 		>
 	</div>

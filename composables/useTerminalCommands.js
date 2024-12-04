@@ -42,7 +42,7 @@ export const useTerminalCommands = () => {
 		},
 		faq: {
 			component: markRaw(FaqCommand),
-			aliases: [],
+			aliases: ['fyi', 'qa'],
 			hidden: false,
 			description: 'View frequently asked questions and answers',
 		},
