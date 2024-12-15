@@ -14,9 +14,11 @@
 			more sleepless nights debugging (but with better snacks). When I'm not
 			creating websites, tinkering with electronics, or Googling "why is my code
 			broken," you'll find me spending time with my awesome wife and our dog
-			<ImageLink src="/img/milo.jpg" alt="My dog Milo">Milo</ImageLink> — who is
-			objectively the best coworker I’ve ever had (even if he sleeps through
-			meetings).
+			<ImageLink src="/Portofolio/img/milo.jpg" alt="My dog Milo"
+				>Milo</ImageLink
+			>
+			— who is objectively the best coworker I’ve ever had (even if he sleeps
+			through meetings).
 		</p>
 		<p>
 			I also dabble in gaming, where I may be a bit older, but I still delight
