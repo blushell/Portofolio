@@ -31,7 +31,7 @@
 </template>
 
 <script setup>
-import ImageViewer from './ImageViewer.vue';
+import ImageViewer from './gallery/ImageViewer.vue';
 
 const props = defineProps({
 	src: {
